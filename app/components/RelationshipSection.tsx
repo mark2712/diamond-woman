@@ -1,0 +1,77 @@
+import React from "react";
+import DiamondDivider from "./DiamondDivider";
+import { CheckIcon, WavesIcon } from "./icons";
+
+export default function RelationshipSection() {
+  const points = [
+    "совпадают ценности;",
+    "вы смотрите в одну сторону;",
+    "есть притяжение и алхимия;",
+    "есть доверие;",
+    "есть близость;",
+    "нет постоянной борьбы и конкуренции;",
+    "можно говорить обо всём;",
+    "можно молчать вместе;",
+    "хочется делать жизнь вместе;",
+    "есть желание отдавать друг другу;",
+    "есть тихое удовольствие от совместной жизни.",
+  ];
+
+  return (
+    <section id="relationships" className="relative w-full py-20 px-5 sm:px-8 z-10">
+      <div className="max-w-[1100px] mx-auto">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#e9c349] font-medium block mb-3">
+            ОРИЕНТИР И БЛИЗОСТЬ
+          </span>
+          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-white font-bold mb-4 leading-tight">
+            Отношения на одной волне
+          </h2>
+          <p className="text-base sm:text-xl text-[#c5c7c9] font-light">
+            Мы не обещаем «идеального мужчину».
+            <br />
+            Мы говорим об отношениях, в которых:
+          </p>
+        </div>
+
+        {/* List of Relationship Features */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
+          {points.map((point, idx) => (
+            <div
+              key={idx}
+              className="glass-card rounded-2xl p-5 flex items-start gap-4 border border-white/5 hover:border-[#e9c349]/30"
+            >
+              <div className="w-7 h-7 rounded-full bg-[#e9c349]/10 border border-[#e9c349]/40 flex items-center justify-center shrink-0 mt-0.5 text-[#e9c349]">
+                <CheckIcon className="w-4 h-4" />
+              </div>
+              <span className="text-sm sm:text-base text-[#e1e2e7] font-medium">
+                {point}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Climax Quote */}
+        <div className="glass-card rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto border border-[#e9c349]/20 relative overflow-hidden">
+          <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-6 text-[#e9c349]">
+            <WavesIcon className="w-6 h-6" />
+          </div>
+
+          <p className="text-sm sm:text-base text-[#8f9194] mb-2 font-serif-luxury">
+            Когда рядом не тот, с кем приходится бороться за любовь.
+          </p>
+          <h3 className="font-serif-luxury text-xl sm:text-3xl text-white font-semibold italic leading-relaxed">
+            «А тот, с кем можно быть{" "}
+            <span className="text-[#ffe088] not-italic font-bold">
+              на одной волне
+            </span>
+            .»
+          </h3>
+        </div>
+
+        <DiamondDivider />
+      </div>
+    </section>
+  );
+}
