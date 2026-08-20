@@ -1,23 +1,24 @@
 "use client";
 
 import React, { useState } from "react";
-import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import PatternsSection from "./components/PatternsSection";
-import PhilosophySection from "./components/PhilosophySection";
-import DiamondWomanSection from "./components/DiamondWomanSection";
-import RelationshipSection from "./components/RelationshipSection";
-import InRelationshipSection from "./components/InRelationshipSection";
-import WhyLiveSection from "./components/WhyLiveSection";
-import GuidesSection from "./components/GuidesSection";
-import InnerWorkSection from "./components/InnerWorkSection";
-import WeekRhythmSection from "./components/WeekRhythmSection";
-import AdaptiveProgramSection from "./components/AdaptiveProgramSection";
-import PointBSection from "./components/PointBSection";
-import DiagnosticSection from "./components/DiagnosticSection";
-import Footer from "./components/Footer";
-import FloatingCta from "./components/FloatingCta";
-import ModalLead from "./components/ModalLead";
+import Header from "./components/blocks/Header";
+import Footer from "./components/blocks/Footer";
+import FloatingCta from "./components/blocks/FloatingCta";
+import ModalLead from "./components/blocks/ModalLead";
+
+import Section1Hero from "./components/sections/s_1_hero/s_1_hero";
+import Section2Patterns from "./components/sections/s_2_patterns/s_2_patterns";
+import Section3Philosophy from "./components/sections/s_3_philosophy/s_3_philosophy";
+import Section4DiamondWoman from "./components/sections/s_4_diamond_woman/s_4_diamond_woman";
+import Section5Relationships from "./components/sections/s_5_relationships/s_5_relationships";
+import Section6InRelationship from "./components/sections/s_6_in_relationship/s_6_in_relationship";
+import Section7WhyLive from "./components/sections/s_7_why_live/s_7_why_live";
+import Section8Guides from "./components/sections/s_8_guides/s_8_guides";
+import Section9InnerWork from "./components/sections/s_9_inner_work/s_9_inner_work";
+import Section10WeekRhythm from "./components/sections/s_10_week_rhythm/s_10_week_rhythm";
+import Section11AdaptiveProgram from "./components/sections/s_11_adaptive_program/s_11_adaptive_program";
+import Section12PointB from "./components/sections/s_12_point_b/s_12_point_b";
+import Section13Diagnostic from "./components/sections/s_13_diagnostic/s_13_diagnostic";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -50,43 +51,43 @@ export default function Home() {
       {/* Main Sections */}
       <main className="flex flex-col w-full">
         {/* 1. Первый экран */}
-        <HeroSection onOpenModal={handleOpenModal} />
+        <Section1Hero onOpenModal={handleOpenModal} />
 
         {/* 2. «Почему я снова оказалась здесь?» */}
-        <PatternsSection />
+        <Section2Patterns />
 
         {/* 3. Главная философия */}
-        <PhilosophySection />
+        <Section3Philosophy />
 
         {/* 4. Кто такая Женщина-Бриллиант */}
-        <DiamondWomanSection />
+        <Section4DiamondWoman />
 
         {/* 5. Отношения на одной волне */}
-        <RelationshipSection />
+        <Section5Relationships />
 
         {/* 6. Если ты уже в отношениях */}
-        <InRelationshipSection />
+        <Section6InRelationship />
 
         {/* 7 & 8. Почему записанный курс не может дать этой глубины + Живое поле */}
-        <WhyLiveSection />
+        <Section7WhyLive />
 
         {/* 9 & 10. Наш путь как проводников + Открытое поле и ответственность */}
-        <GuidesSection />
+        <Section8Guides />
 
         {/* 11. Что происходит внутри */}
-        <InnerWorkSection />
+        <Section9InnerWork />
 
         {/* 12. Как проходит неделя */}
-        <WeekRhythmSection />
+        <Section10WeekRhythm />
 
         {/* 13. Программа рождается из вас */}
-        <AdaptiveProgramSection />
+        <Section11AdaptiveProgram />
 
         {/* 14. Точка B */}
-        <PointBSection />
+        <Section12PointB />
 
         {/* 15. Диагностика & Финальный экран */}
-        <DiagnosticSection onOpenModal={handleOpenModal} />
+        <Section13Diagnostic onOpenModal={handleOpenModal} />
       </main>
 
       {/* Footer with legal data from data/data.ts */}
