@@ -18,18 +18,18 @@ export default function Section4DiamondWoman() {
   ];
 
   return (
-    <section id="diamond-woman" className="relative w-full py-20 px-5 sm:px-8 z-10">
+    <section id="diamond-woman" className="relative w-full py-24 px-5 sm:px-8 z-10 bg-[#fcf9f8]">
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[#e9c349] font-medium block mb-3">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#b89628] font-bold block mb-3">
             СУТЬ И СОСТОЯНИЕ
           </span>
-          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-white font-bold mb-6 leading-tight">
+          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-[#111417] font-bold mb-6 leading-tight">
             Кто такая Женщина-Бриллиант?
           </h2>
-          <div className="space-y-2 text-sm sm:text-base text-[#c5c7c9] max-w-2xl mx-auto">
-            <p className="text-white/80 font-medium">
+          <div className="space-y-2 text-sm sm:text-base text-[#4a4d52] max-w-2xl mx-auto">
+            <p className="text-[#111417] font-bold">
               Женщина-Бриллиант — это не идеальная женщина.
             </p>
             <p>И не женщина, которая становится лучше ради мужчины.</p>
@@ -37,10 +37,10 @@ export default function Section4DiamondWoman() {
         </div>
 
         {/* Big Definition Callout */}
-        <div className="glass-card-glow rounded-3xl p-8 sm:p-12 mb-16 text-center max-w-3xl mx-auto">
-          <p className="font-serif-luxury text-lg sm:text-2xl text-white leading-relaxed">
+        <div className="glass-card-glow rounded-3xl p-8 sm:p-12 mb-16 text-center max-w-3xl mx-auto bg-white shadow-[0_12px_35px_rgba(212,175,55,0.12)]">
+          <p className="font-serif-luxury text-lg sm:text-2xl text-[#111417] leading-relaxed">
             «Это женщина, которая{" "}
-            <span className="text-[#ffe088] underline decoration-[#e9c349]/40 underline-offset-8">
+            <span className="text-[#b89628] underline decoration-[#d4af37] underline-offset-8 font-bold">
               знает свою ценность настолько глубоко
             </span>
             , что ей больше не нужно искать подтверждение этой ценности через отношения.»
@@ -50,7 +50,7 @@ export default function Section4DiamondWoman() {
         {/* Facets Grid */}
         <div className="mb-14">
           <div className="text-center mb-8">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#8f9194]">
+            <span className="text-xs uppercase tracking-[0.2em] text-[#787b80] font-bold">
               Она умеет:
             </span>
           </div>
@@ -65,15 +65,15 @@ export default function Section4DiamondWoman() {
         {/* Conclusion */}
         <div className="text-center max-w-xl mx-auto py-6">
           <div className="inline-flex items-center gap-2 mb-3">
-            <SparklesIcon className="w-4 h-4 text-[#e9c349]" />
-            <span className="text-xs uppercase tracking-[0.2em] text-[#8f9194]">
+            <SparklesIcon className="w-4 h-4 text-[#d4af37]" />
+            <span className="text-xs uppercase tracking-[0.2em] text-[#787b80] font-bold">
               Трансформация
             </span>
           </div>
-          <p className="text-base sm:text-lg text-[#c5c7c9] mb-2">
+          <p className="text-base sm:text-lg text-[#4a4d52] mb-2">
             И в какой-то момент ей уже не нужно искать, кем стать.
           </p>
-          <h3 className="font-serif-luxury text-2xl sm:text-4xl text-white font-bold tracking-wide">
+          <h3 className="font-serif-luxury text-2xl sm:text-4xl text-[#111417] font-bold tracking-wide">
             Она узнаёт себя.
           </h3>
         </div>

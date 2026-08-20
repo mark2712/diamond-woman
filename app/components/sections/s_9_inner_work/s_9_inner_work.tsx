@@ -23,17 +23,17 @@ export default function Section9InnerWork() {
   ];
 
   return (
-    <section className="relative w-full py-20 px-5 sm:px-8 z-10">
+    <section className="relative w-full py-24 px-5 sm:px-8 z-10 bg-white">
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[#e9c349] font-medium block mb-3">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#b89628] font-bold block mb-3">
             СИНЕРГИЯ ДВУХ ВЗГЛЯДОВ
           </span>
-          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-white font-bold mb-4 leading-tight">
+          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-[#111417] font-bold mb-4 leading-tight">
             Что происходит внутри
           </h2>
-          <p className="font-serif-luxury text-lg sm:text-2xl text-[#ffe088] italic">
+          <p className="font-serif-luxury text-lg sm:text-2xl text-[#b89628] italic font-bold">
             Два проводника. Два взгляда. Одна женщина.
           </p>
         </div>
@@ -60,18 +60,18 @@ export default function Section9InnerWork() {
         </div>
 
         {/* Synergy Result Box */}
-        <div className="glass-card-glow rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto border-white/20">
-          <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-4 text-[#e9c349]">
+        <div className="glass-card-glow rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto bg-white shadow-[0_12px_40px_rgba(212,175,55,0.12)]">
+          <div className="w-12 h-12 rounded-full bg-[#f7f5f2] border border-[#d4af37]/40 flex items-center justify-center mx-auto mb-4 text-[#d4af37]">
             <InfinityIcon className="w-6 h-6" />
           </div>
 
-          <span className="text-xs uppercase tracking-[0.25em] text-[#e9c349] font-medium block mb-2">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#b89628] font-bold block mb-2">
             ВМЕСТЕ
           </span>
-          <h3 className="font-serif-luxury text-xl sm:text-3xl text-white font-bold mb-3">
+          <h3 className="font-serif-luxury text-xl sm:text-3xl text-[#111417] font-bold mb-3">
             Мы смотрим на женщину не с одной стороны.
           </h3>
-          <p className="font-serif-luxury text-base sm:text-xl text-[#ffe088] italic">
+          <p className="font-serif-luxury text-base sm:text-xl text-[#b89628] italic font-semibold">
             «Мы исследуем, что создаёт её нынешнюю реальность.»
           </p>
         </div>

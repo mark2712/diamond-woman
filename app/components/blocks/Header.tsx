@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { DiamondIcon, MenuIcon, CrossIcon } from "../icons";
-import { siteData } from "../../data/data";
+import { DiamondIcon, MenuIcon, CrossIcon } from "./icons";
+import { siteData } from "../../../data/data";
 import CtaButton from "./CtaButton";
 
 interface HeaderProps {
@@ -22,14 +22,26 @@ export default function Header({ onOpenModal }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
+  // Лаконичные, ключевые пункты для десктопа (без переносов строк)
+  const desktopNavItems = [
     { label: "О пространстве", href: "#about" },
     { label: "Сценарии", href: "#patterns" },
     { label: "Философия", href: "#philosophy" },
-    { label: "Кто она", href: "#diamond-woman" },
-    { label: "Отношения", href: "#relationships" },
     { label: "Проводники", href: "#guides" },
     { label: "Ритм недели", href: "#week-rhythm" },
+    { label: "Диагностика", href: "#diagnostic" },
+  ];
+
+  // Полное меню для мобильной шторки
+  const mobileNavItems = [
+    { label: "О пространстве", href: "#about" },
+    { label: "Сценарии отношений", href: "#patterns" },
+    { label: "Главная философия", href: "#philosophy" },
+    { label: "Кто такая Женщина-Бриллиант", href: "#diamond-woman" },
+    { label: "Отношения на одной волне", href: "#relationships" },
+    { label: "Проводники Татьяна и Юрий", href: "#guides" },
+    { label: "Живой ритм недели", href: "#week-rhythm" },
+    { label: "Персональная диагностика", href: "#diagnostic" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -43,38 +55,38 @@ export default function Header({ onOpenModal }: HeaderProps) {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-500 pt-safe ${
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 pt-safe ${
           isScrolled
-            ? "bg-[#111417]/85 backdrop-blur-2xl border-b border-white/10 shadow-2xl py-3.5"
-            : "bg-transparent py-5"
+            ? "bg-[#fcf9f8]/95 backdrop-blur-xl border-b border-[#d0c5af]/40 shadow-[0_4px_25px_rgba(77,70,53,0.06)] py-3"
+            : "bg-transparent py-4 sm:py-5"
         }`}
       >
-        <div className="max-w-[1240px] mx-auto px-5 sm:px-8 flex items-center justify-between">
-          {/* Logo */}
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-8 flex items-center justify-between gap-4">
+          {/* Brand / Logo */}
           <a
             href="#"
-            className="flex items-center gap-2.5 group cursor-pointer"
+            className="flex items-center gap-2.5 group shrink-0 cursor-pointer"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <div className="w-8 h-8 rounded-full bg-white/10 border border-[#e9c349]/40 flex items-center justify-center group-hover:border-[#e9c349] transition-colors">
-              <DiamondIcon className="w-4 h-4 text-[#e9c349] group-hover:rotate-45 transition-transform duration-500" />
+            <div className="w-8 h-8 rounded-full bg-[#735c00]/10 border border-[#735c00]/30 flex items-center justify-center group-hover:border-[#735c00] transition-colors shadow-sm">
+              <DiamondIcon className="w-4 h-4 text-[#735c00] group-hover:rotate-45 transition-transform duration-500" />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif-luxury text-sm sm:text-base tracking-[0.18em] uppercase text-white font-medium">
+              <span className="font-serif-luxury text-sm sm:text-base tracking-[0.15em] uppercase text-[#1b1c1c] font-semibold">
                 Женщина-Бриллиант
               </span>
-              <span className="text-[9px] uppercase tracking-[0.25em] text-[#e9c349] opacity-80">
+              <span className="text-[9px] uppercase tracking-[0.2em] text-[#735c00] font-medium opacity-90">
                 Живое пространство
               </span>
             </div>
           </a>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {navItems.map((item) => (
+          {/* Desktop Nav: Spacious, whitespace-nowrap, zero collisions */}
+          <nav className="hidden xl:flex items-center gap-6 2xl:gap-8">
+            {desktopNavItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -82,15 +94,15 @@ export default function Header({ onOpenModal }: HeaderProps) {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="text-xs uppercase tracking-[0.15em] text-[#c5c7c9] hover:text-white transition-colors duration-200"
+                className="text-xs uppercase tracking-[0.14em] text-[#4d4635] hover:text-[#735c00] font-medium transition-colors duration-200 whitespace-nowrap py-1"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* Actions */}
-          <div className="hidden sm:flex items-center gap-4">
+          {/* Desktop CTA Action */}
+          <div className="hidden sm:flex items-center gap-3 shrink-0">
             <CtaButton
               actionType="TRY_7_DAYS"
               variant="primary"
@@ -105,7 +117,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-[#e9c349] transition-colors"
+            className="xl:hidden w-10 h-10 flex items-center justify-center text-[#1b1c1c] hover:text-[#735c00] transition-colors rounded-full hover:bg-black/5"
             aria-label="Меню"
           >
             {mobileMenuOpen ? <CrossIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
@@ -115,24 +127,27 @@ export default function Header({ onOpenModal }: HeaderProps) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#111417]/95 backdrop-blur-3xl pt-24 px-6 pb-8 transition-all animate-fade-in overflow-y-auto">
-          <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
+        <div className="fixed inset-0 z-50 xl:hidden flex flex-col bg-[#fcf9f8]/98 backdrop-blur-3xl pt-20 px-6 pb-8 transition-all animate-fade-in overflow-y-auto">
+          {/* Header in Mobile Menu */}
+          <div className="flex items-center justify-between pb-4 border-b border-[#d0c5af]/30 mb-6">
             <div className="flex items-center gap-2">
-              <DiamondIcon className="w-5 h-5 text-[#e9c349]" />
-              <span className="font-serif-luxury text-base uppercase tracking-widest text-white">
+              <div className="w-7 h-7 rounded-full bg-[#735c00]/10 flex items-center justify-center">
+                <DiamondIcon className="w-4 h-4 text-[#735c00]" />
+              </div>
+              <span className="font-serif-luxury text-base uppercase tracking-widest text-[#1b1c1c] font-semibold">
                 Женщина-Бриллиант
               </span>
             </div>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white"
+              className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center text-[#1b1c1c]"
             >
               <CrossIcon className="w-5 h-5" />
             </button>
           </div>
 
-          <nav className="flex flex-col gap-5 mb-10">
-            {navItems.map((item) => (
+          <nav className="flex flex-col gap-3 mb-8">
+            {mobileNavItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -140,14 +155,14 @@ export default function Header({ onOpenModal }: HeaderProps) {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="font-serif-luxury text-lg text-[#e1e2e7] hover:text-[#e9c349] transition-colors py-2 border-b border-white/5"
+                className="font-serif-luxury text-base text-[#1b1c1c] hover:text-[#735c00] transition-colors py-2 border-b border-black/5"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          <div className="mt-auto space-y-4">
+          <div className="mt-auto space-y-3">
             <CtaButton
               actionType="TRY_7_DAYS"
               variant="primary"
@@ -165,7 +180,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
               href={siteData.footer.contacts.telegramUrl}
               target="_blank"
               rel="noreferrer"
-              className="w-full py-3.5 rounded-full border border-white/20 text-center block text-xs uppercase tracking-widest text-white hover:bg-white/5 transition-colors"
+              className="w-full py-3.5 rounded-full border border-[#d0c5af] text-center block text-xs uppercase tracking-widest text-[#4d4635] hover:text-[#1b1c1c] hover:bg-white transition-colors font-medium shadow-sm"
             >
               Telegram сообщество
             </a>

@@ -21,8 +21,8 @@ export default function GuideScopeCard({
 
   return (
     <div
-      className={`glass-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between border-t-2 ${
-        isGold ? "border-t-[#e9c349]" : "border-t-[#dde1ff]"
+      className={`glass-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between border-t-4 bg-white/90 shadow-sm ${
+        isGold ? "border-t-[#735c00]" : "border-t-[#5e5e5c]"
       }`}
     >
       <div>
@@ -30,19 +30,19 @@ export default function GuideScopeCard({
           <div
             className={`w-10 h-10 rounded-full flex items-center justify-center ${
               isGold
-                ? "bg-[#e9c349]/10 border border-[#e9c349]/40 text-[#e9c349]"
-                : "bg-[#dde1ff]/10 border border-[#dde1ff]/40 text-[#dde1ff]"
+                ? "bg-[#735c00]/10 border border-[#735c00]/30 text-[#735c00]"
+                : "bg-[#5e5e5c]/10 border border-[#5e5e5c]/30 text-[#5e5e5c]"
             }`}
           >
             {icon}
           </div>
           <div>
-            <h3 className="font-serif-luxury text-2xl text-white font-bold tracking-wide">
+            <h3 className="font-serif-luxury text-2xl text-[#1b1c1c] font-bold tracking-wide">
               {title}
             </h3>
             <p
-              className={`text-xs uppercase tracking-wider ${
-                isGold ? "text-[#e9c349]" : "text-[#dde1ff]"
+              className={`text-xs uppercase tracking-wider font-semibold ${
+                isGold ? "text-[#735c00]" : "text-[#5e5e5c]"
               }`}
             >
               {subtitle}
@@ -50,14 +50,14 @@ export default function GuideScopeCard({
           </div>
         </div>
 
-        <p className="text-xs sm:text-sm text-[#8f9194] mb-4">{desc}</p>
+        <p className="text-xs sm:text-sm text-[#7f7663] mb-4 font-medium">{desc}</p>
 
         <ul className="space-y-3">
           {items.map((item, idx) => (
-            <li key={idx} className="flex items-center gap-3 text-sm text-[#e1e2e7]">
+            <li key={idx} className="flex items-center gap-3 text-sm text-[#1b1c1c]">
               <div
                 className={`w-1.5 h-1.5 rounded-full ${
-                  isGold ? "bg-[#e9c349]" : "bg-[#dde1ff]"
+                  isGold ? "bg-[#735c00]" : "bg-[#5e5e5c]"
                 }`}
               />
               <span>{item}</span>

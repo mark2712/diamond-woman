@@ -20,7 +20,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#111417",
+  themeColor: "#fcf9f8",
 };
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className={`${playfair.variable} ${manrope.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#111417] text-[#e1e2e7] antialiased selection:bg-[#e9c349]/30 selection:text-white flex flex-col font-sans-modern">
+      <body className="min-h-screen bg-[#fcf9f8] text-[#1b1c1c] antialiased selection:bg-[#d4af37]/30 selection:text-[#1b1c1c] flex flex-col font-sans-modern">
         {children}
       </body>
     </html>

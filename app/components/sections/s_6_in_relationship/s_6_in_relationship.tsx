@@ -22,29 +22,29 @@ export default function Section6InRelationship() {
   ];
 
   return (
-    <section className="relative w-full py-20 px-5 sm:px-8 z-10">
+    <section className="relative w-full py-24 px-5 sm:px-8 z-10 bg-[#fcf9f8]">
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[#e9c349] font-medium block mb-3">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#b89628] font-bold block mb-3">
             СОХРАНЕНИЕ И РАЗВИТИЕ СОЮЗА
           </span>
-          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-white font-bold mb-4 leading-tight">
+          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-[#111417] font-bold mb-4 leading-tight">
             Если ты уже в отношениях
           </h2>
-          <p className="font-serif-luxury text-lg sm:text-2xl text-[#ffe088] mb-3">
+          <p className="font-serif-luxury text-lg sm:text-2xl text-[#b89628] mb-3 font-bold">
             Тебе не обязательно быть одинокой.
           </p>
-          <p className="text-sm sm:text-base text-[#c5c7c9] max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-[#4a4d52] max-w-xl mx-auto leading-relaxed">
             Мы за сохранение семьи и отношений, если ты хочешь этот союз развивать.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-14">
           {/* Left Column: Если ты */}
-          <div className="lg:col-span-6 glass-card rounded-3xl p-7 sm:p-9 flex flex-col justify-between">
+          <div className="lg:col-span-6 glass-card rounded-3xl p-7 sm:p-9 flex flex-col justify-between bg-white shadow-sm">
             <div>
-              <span className="text-xs uppercase tracking-[0.2em] text-[#8f9194] font-medium block mb-5">
+              <span className="text-xs uppercase tracking-[0.2em] text-[#787b80] font-bold block mb-5">
                 Если сейчас в паре:
               </span>
               <ul className="space-y-3.5">
@@ -54,38 +54,38 @@ export default function Section6InRelationship() {
               </ul>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-white/10">
-              <p className="text-xs uppercase tracking-wider text-[#8f9194] mb-2">
+            <div className="mt-8 pt-6 border-t border-[#e5e0d5]">
+              <p className="text-xs uppercase tracking-wider text-[#787b80] mb-2 font-medium">
                 мы не будем давать тебе автоматический совет:
               </p>
-              <div className="inline-block px-4 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 font-serif-luxury text-lg sm:text-xl font-bold line-through">
+              <div className="inline-block px-4 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-red-700 font-serif-luxury text-lg sm:text-xl font-bold line-through">
                 «Уходи»
               </div>
             </div>
           </div>
 
           {/* Right Column: Мы сначала посмотрим */}
-          <div className="lg:col-span-6 glass-card-glow rounded-3xl p-7 sm:p-9 flex flex-col justify-between border-[#e9c349]/30">
+          <div className="lg:col-span-6 glass-card-glow rounded-3xl p-7 sm:p-9 flex flex-col justify-between bg-white shadow-[0_12px_35px_rgba(212,175,55,0.12)]">
             <div>
-              <div className="flex items-center gap-2 mb-4 text-[#e9c349]">
+              <div className="flex items-center gap-2 mb-4 text-[#d4af37]">
                 <EyeIcon className="w-5 h-5" />
-                <span className="text-xs uppercase tracking-[0.2em] font-medium">
+                <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b89628]">
                   Глубинное исследование
                 </span>
               </div>
-              <h3 className="font-serif-luxury text-xl sm:text-2xl text-white font-semibold mb-6">
+              <h3 className="font-serif-luxury text-xl sm:text-2xl text-[#111417] font-bold mb-6">
                 Мы сначала посмотрим:
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 {diagnosticQuestions.map((q, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-3.5"
+                    className="p-4 rounded-2xl bg-[#f7f5f2] border border-[#e5e0d5] flex items-center gap-3.5"
                   >
-                    <span className="font-serif-luxury text-sm text-[#e9c349] font-bold">
+                    <span className="font-serif-luxury text-sm text-[#d4af37] font-bold">
                       0{idx + 1}
                     </span>
-                    <span className="text-sm sm:text-base text-white font-medium">
+                    <span className="text-sm sm:text-base text-[#111417] font-semibold">
                       {q}
                     </span>
                   </div>
@@ -93,8 +93,8 @@ export default function Section6InRelationship() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-[#c5c7c9]">
-              <ShieldCheckIcon className="w-5 h-5 text-[#e9c349] shrink-0" />
+            <div className="mt-8 pt-6 border-t border-[#e5e0d5] flex items-center gap-3 text-xs text-[#4a4d52]">
+              <ShieldCheckIcon className="w-5 h-5 text-[#d4af37] shrink-0" />
               <span>
                 Бережный подход к паре, сохранение эмоциональной безопасности и поиск истинных опор.
               </span>

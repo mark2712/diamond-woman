@@ -40,17 +40,13 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#111417] text-[#e1e2e7] overflow-x-hidden stardust-bg bg-grain">
-      {/* Background radial ambient lights */}
-      <div className="fixed top-0 left-1/4 w-[500px] h-[500px] bg-[#dde1ff]/5 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="fixed bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#e9c349]/5 rounded-full blur-[160px] pointer-events-none -z-10" />
-
+    <div className="relative min-h-screen bg-white text-[#111417] overflow-x-hidden">
       {/* Header */}
       <Header onOpenModal={handleOpenModal} />
 
       {/* Main Sections */}
       <main className="flex flex-col w-full">
-        {/* 1. Первый экран */}
+        {/* 1. Первый экран (Чистый белый фон, сияющий золотой заголовок как в dis1) */}
         <Section1Hero onOpenModal={handleOpenModal} />
 
         {/* 2. «Почему я снова оказалась здесь?» */}
@@ -90,7 +86,7 @@ export default function Home() {
         <Section13Diagnostic onOpenModal={handleOpenModal} />
       </main>
 
-      {/* Footer with legal data from data/data.ts */}
+      {/* Footer */}
       <Footer />
 
       {/* Floating Mobile/Desktop CTA */}

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { CrossIcon, DiamondIcon, TelegramIcon, CheckIcon } from "../icons";
-import { siteData } from "../../data/data";
+import { CrossIcon, DiamondIcon, TelegramIcon, CheckIcon } from "./icons";
+import { siteData } from "../../../data/data";
 
 interface ModalLeadProps {
   isOpen: boolean;
@@ -55,82 +55,82 @@ export default function ModalLead({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity">
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-lg bg-[#191c1f]/95 border border-white/15 rounded-3xl p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.8)] backdrop-blur-2xl z-10 overflow-hidden text-[#e1e2e7]">
-        <div className="absolute top-0 right-0 w-48 h-48 bg-[#e9c349]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#dde1ff]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative w-full max-w-lg bg-white border border-[#e5e0d5] rounded-3xl p-6 sm:p-8 shadow-[0_25px_60px_rgba(17,20,23,0.15)] z-10 overflow-hidden text-[#111417]">
+        <div className="absolute top-0 right-0 w-48 h-48 bg-[#d4af37]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#fff2b2]/40 rounded-full blur-3xl pointer-events-none" />
 
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/15 text-[#c5c7c9] hover:text-white transition-colors cursor-pointer"
+          className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full bg-black/5 hover:bg-black/10 text-[#787b80] hover:text-[#111417] transition-colors cursor-pointer"
         >
           <CrossIcon className="w-5 h-5" />
         </button>
 
         {submitted ? (
           <div className="py-10 flex flex-col items-center text-center">
-            <div className="w-16 h-16 rounded-full bg-[#e9c349]/20 border border-[#e9c349]/50 flex items-center justify-center mb-6 text-[#e9c349]">
+            <div className="w-16 h-16 rounded-full bg-[#d4af37]/15 border border-[#d4af37]/40 flex items-center justify-center mb-6 text-[#b89628]">
               <CheckIcon className="w-8 h-8" />
             </div>
-            <h3 className="font-serif-luxury text-2xl sm:text-3xl text-white mb-3">
+            <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#111417] mb-3">
               Благодарим за доверие
             </h3>
-            <p className="text-[#c5c7c9] text-sm sm:text-base max-w-sm mb-8 leading-relaxed">
+            <p className="text-[#4a4d52] text-sm sm:text-base max-w-sm mb-8 leading-relaxed">
               Ваша заявка принята. Проводники свяжутся с вами в Telegram или WhatsApp для открытия доступа к живому полю.
             </p>
             <button
               onClick={onClose}
               type="button"
-              className="px-8 py-3.5 rounded-full bg-white text-[#111417] font-medium uppercase tracking-[0.15em] text-xs hover:bg-[#f5f5f7] transition-all cursor-pointer"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#e6c35c] via-[#ffd978] to-[#d4af37] text-[#1c1400] font-bold uppercase tracking-[0.15em] text-xs shadow-md hover:shadow-lg transition-all cursor-pointer"
             >
               Закрыть
             </button>
           </div>
         ) : (
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <DiamondIcon className="w-4 h-4 text-[#e9c349]" />
-              <span className="text-[11px] uppercase tracking-[0.2em] text-[#e9c349] font-medium">
+            <div className="flex items-center gap-2 mb-2">
+              <DiamondIcon className="w-4 h-4 text-[#d4af37]" />
+              <span className="text-[11px] uppercase tracking-[0.2em] text-[#b89628] font-bold">
                 Пространство трансформации
               </span>
             </div>
 
-            <h3 className="font-serif-luxury text-xl sm:text-2xl text-white mb-2 leading-tight">
+            <h3 className="font-serif-luxury text-xl sm:text-2xl text-[#111417] mb-2 leading-tight font-bold">
               {title}
             </h3>
 
-            <p className="text-xs sm:text-sm text-[#c5c7c9] mb-6 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#4a4d52] mb-6 leading-relaxed">
               Оставьте контактные данные или перейдите напрямую в Telegram, чтобы начать соприкосновение со своей истинной глубиной.
             </p>
 
-            <div className="mb-6 p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="mb-6 p-4 rounded-2xl bg-[#f7f5f2] border border-[#e5e0d5] flex flex-col sm:flex-row items-center justify-between gap-3">
               <div className="text-left">
-                <div className="text-xs font-semibold text-white">Мгновенный старт через Telegram</div>
-                <div className="text-[11px] text-[#c5c7c9]">Без ожидания ответа оператора</div>
+                <div className="text-xs font-bold text-[#111417]">Мгновенный старт через Telegram</div>
+                <div className="text-[11px] text-[#787b80]">Без ожидания ответа оператора</div>
               </div>
               <button
                 type="button"
                 onClick={handleTelegramDirect}
-                className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#2AABEE]/20 hover:bg-[#2AABEE]/30 border border-[#2AABEE]/50 text-white text-xs font-medium tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#2AABEE] text-white text-xs font-bold tracking-wide flex items-center justify-center gap-2 hover:bg-[#229ed9] transition-all cursor-pointer shadow-sm"
               >
-                <TelegramIcon className="w-4 h-4 text-[#2AABEE]" />
+                <TelegramIcon className="w-4 h-4 text-white" />
                 Открыть Telegram
               </button>
             </div>
 
             <div className="relative flex items-center justify-center my-4">
-              <div className="h-[1px] w-full bg-white/10" />
-              <span className="absolute px-3 bg-[#191c1f] text-[11px] uppercase tracking-wider text-[#8f9194]">
+              <div className="h-[1px] w-full bg-[#e5e0d5]" />
+              <span className="absolute px-3 bg-white text-[11px] uppercase tracking-wider text-[#787b80] font-semibold">
                 или отправьте форму
               </span>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3.5">
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#c5c7c9] mb-1.5 font-medium">
+                <label className="block text-[11px] uppercase tracking-wider text-[#4a4d52] mb-1 font-bold">
                   Ваше Имя
                 </label>
                 <input
@@ -139,12 +139,12 @@ export default function ModalLead({
                   placeholder="Как к вам обращаться?"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#e9c349] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#f7f5f2] border border-[#e5e0d5] text-[#111417] placeholder-[#787b80]/60 text-sm focus:outline-none focus:border-[#d4af37] transition-colors"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#c5c7c9] mb-1.5 font-medium">
+                <label className="block text-[11px] uppercase tracking-wider text-[#4a4d52] mb-1 font-bold">
                   Телефон или Telegram
                 </label>
                 <input
@@ -153,12 +153,12 @@ export default function ModalLead({
                   placeholder="+7 (999) 000-00-00 или @username"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#e9c349] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#f7f5f2] border border-[#e5e0d5] text-[#111417] placeholder-[#787b80]/60 text-sm focus:outline-none focus:border-[#d4af37] transition-colors"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#c5c7c9] mb-1.5 font-medium">
+                <label className="block text-[11px] uppercase tracking-wider text-[#4a4d52] mb-1 font-bold">
                   Ваш запрос / Вопрос (по желанию)
                 </label>
                 <textarea
@@ -166,24 +166,24 @@ export default function ModalLead({
                   placeholder="С чем вы хотите поработать?"
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/15 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#e9c349] transition-colors resize-none"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#f7f5f2] border border-[#e5e0d5] text-[#111417] placeholder-[#787b80]/60 text-sm focus:outline-none focus:border-[#d4af37] transition-colors resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-white text-[#111417] font-semibold text-xs uppercase tracking-[0.2em] hover:bg-[#f5f5f7] shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all active:scale-[0.98] cursor-pointer mt-2"
+                className="w-full py-4 rounded-full bg-gradient-to-r from-[#e6c35c] via-[#ffd978] to-[#d4af37] text-[#1c1400] font-bold text-xs uppercase tracking-[0.2em] shadow-[0_6px_28px_rgba(212,175,55,0.45)] hover:shadow-[0_8px_35px_rgba(212,175,55,0.6)] transition-all active:scale-[0.98] cursor-pointer mt-2"
               >
                 Отправить заявку
               </button>
 
-              <div className="text-[10px] text-center text-[#8f9194] leading-normal pt-1">
+              <div className="text-[10px] text-center text-[#787b80] leading-normal pt-1">
                 Нажимая кнопку, вы соглашаетесь с{" "}
                 <a
                   href={siteData.footer.links.privacyPolicy}
                   target="_blank"
                   rel="noreferrer"
-                  className="underline hover:text-white"
+                  className="underline hover:text-[#b89628]"
                 >
                   политикой конфиденциальности
                 </a>

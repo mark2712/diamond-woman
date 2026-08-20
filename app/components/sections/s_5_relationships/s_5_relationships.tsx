@@ -19,17 +19,17 @@ export default function Section5Relationships() {
   ];
 
   return (
-    <section id="relationships" className="relative w-full py-20 px-5 sm:px-8 z-10">
+    <section id="relationships" className="relative w-full py-24 px-5 sm:px-8 z-10 bg-white">
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[#e9c349] font-medium block mb-3">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#b89628] font-bold block mb-3">
             ОРИЕНТИР И БЛИЗОСТЬ
           </span>
-          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-white font-bold mb-4 leading-tight">
+          <h2 className="font-serif-luxury text-2xl sm:text-4xl lg:text-5xl text-[#111417] font-bold mb-4 leading-tight">
             Отношения на одной волне
           </h2>
-          <p className="text-base sm:text-xl text-[#c5c7c9] font-light">
+          <p className="text-base sm:text-xl text-[#4a4d52] font-light">
             Мы не обещаем «идеального мужчину».
             <br />
             Мы говорим об отношениях, в которых:
@@ -44,17 +44,17 @@ export default function Section5Relationships() {
         </div>
 
         {/* Climax Quote */}
-        <div className="glass-card rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto border border-[#e9c349]/20 relative overflow-hidden">
-          <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-6 text-[#e9c349]">
+        <div className="glass-card-glow rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto relative overflow-hidden bg-white shadow-[0_12px_40px_rgba(212,175,55,0.12)]">
+          <div className="w-12 h-12 rounded-full bg-[#f7f5f2] border border-[#d4af37]/40 flex items-center justify-center mx-auto mb-6 text-[#d4af37]">
             <WavesIcon className="w-6 h-6" />
           </div>
 
-          <p className="text-sm sm:text-base text-[#8f9194] mb-2 font-serif-luxury">
+          <p className="text-sm sm:text-base text-[#787b80] mb-2 font-serif-luxury">
             Когда рядом не тот, с кем приходится бороться за любовь.
           </p>
-          <h3 className="font-serif-luxury text-xl sm:text-3xl text-white font-semibold italic leading-relaxed">
+          <h3 className="font-serif-luxury text-xl sm:text-3xl text-[#111417] font-semibold italic leading-relaxed">
             «А тот, с кем можно быть{" "}
-            <span className="text-[#ffe088] not-italic font-bold">
+            <span className="text-[#b89628] not-italic font-bold">
               на одной волне
             </span>
             .»
