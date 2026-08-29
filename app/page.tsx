@@ -1,24 +1,26 @@
 "use client";
 
 import React, { useState } from "react";
-import Header from "./components/blocks/Header";
-import Footer from "./components/blocks/Footer";
-import FloatingCta from "./components/blocks/FloatingCta";
-import ModalLead from "./components/blocks/ModalLead";
+import Header from "@/components/blocks/Header";
+import Footer from "@/components/blocks/Footer";
+import FloatingCta from "@/components/blocks/FloatingCta";
+import ModalLead from "@/components/blocks/ModalLead";
 
-import Section1Hero from "./components/sections/s_1_hero/s_1_hero";
-import Section2Patterns from "./components/sections/s_2_patterns/s_2_patterns";
-import Section3Philosophy from "./components/sections/s_3_philosophy/s_3_philosophy";
-import Section4DiamondWoman from "./components/sections/s_4_diamond_woman/s_4_diamond_woman";
-import Section5Relationships from "./components/sections/s_5_relationships/s_5_relationships";
-import Section6InRelationship from "./components/sections/s_6_in_relationship/s_6_in_relationship";
-import Section7WhyLive from "./components/sections/s_7_why_live/s_7_why_live";
-import Section8Guides from "./components/sections/s_8_guides/s_8_guides";
-import Section9InnerWork from "./components/sections/s_9_inner_work/s_9_inner_work";
-import Section10WeekRhythm from "./components/sections/s_10_week_rhythm/s_10_week_rhythm";
-import Section11AdaptiveProgram from "./components/sections/s_11_adaptive_program/s_11_adaptive_program";
-import Section12PointB from "./components/sections/s_12_point_b/s_12_point_b";
-import Section13Diagnostic from "./components/sections/s_13_diagnostic/s_13_diagnostic";
+import Section1Hero from "@/components/sections_main/s_1_hero/s_1_hero";
+import Section2Patterns from "@/components/sections_main/s_2_patterns/s_2_patterns";
+import Section3Philosophy from "@/components/sections_main/s_3_philosophy/s_3_philosophy";
+import SectionSelfSufficient from "@/components/sections_main/s_3_5_self_sufficient/s_3_5_self_sufficient";
+import Section4DiamondWoman from "@/components/sections_main/s_4_diamond_woman/s_4_diamond_woman";
+import SectionMeetingSelf from "@/components/sections_main/s_4_5_meeting_self/s_4_5_meeting_self";
+import Section5Relationships from "@/components/sections_main/s_5_relationships/s_5_relationships";
+import Section6InRelationship from "@/components/sections_main/s_6_in_relationship/s_6_in_relationship";
+import Section7WhyLive from "@/components/sections_main/s_7_why_live/s_7_why_live";
+import Section8Guides from "@/components/sections_main/s_8_guides/s_8_guides";
+import Section9InnerWork from "@/components/sections_main/s_9_inner_work/s_9_inner_work";
+import Section10WeekRhythm from "@/components/sections_main/s_10_week_rhythm/s_10_week_rhythm";
+import Section11AdaptiveProgram from "@/components/sections_main/s_11_adaptive_program/s_11_adaptive_program";
+import Section12PointB from "@/components/sections_main/s_12_point_b/s_12_point_b";
+import Section13Diagnostic from "@/components/sections_main/s_13_diagnostic/s_13_diagnostic";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -28,7 +30,7 @@ export default function Home() {
   const handleOpenModal = (source: string) => {
     setModalSource(source);
     if (source.toLowerCase().includes("диагностик")) {
-      setModalTitle("Запись на персональную диагностику");
+      setModalTitle("Персональная диагностика сценария");
     } else {
       setModalTitle("Попробовать 7 дней внутри сообщества");
     }
@@ -46,43 +48,49 @@ export default function Home() {
 
       {/* Main Sections */}
       <main className="flex flex-col w-full">
-        {/* 1. Первый экран (Чистый белый фон, сияющий золотой заголовок как в dis1) */}
+        {/* 1. Первый экран: БУДЬ ЖЕНЩИНОЙ-БРИЛЛИАНТОМ */}
         <Section1Hero onOpenModal={handleOpenModal} />
 
-        {/* 2. «Почему я снова оказалась здесь?» */}
+        {/* 2. «Почему я снова оказалась здесь?» (Осознание сценариев и усталости быть сильной) */}
         <Section2Patterns />
 
-        {/* 3. Главная философия */}
+        {/* 3. Главная философия (Притягиваем не умом, а тем, кем являемся внутри) */}
         <Section3Philosophy />
 
-        {/* 4. Кто такая Женщина-Бриллиант */}
+        {/* 4. Самостоятельная ≠ Самодостаточная («Я всё могу сама» vs «Мне хорошо с собой») */}
+        <SectionSelfSufficient />
+
+        {/* 5. Кто такая Женщина-Бриллиант (Огранка внутренней сути) */}
         <Section4DiamondWoman />
 
-        {/* 5. Отношения на одной волне */}
+        {/* 6. Самая важная встреча — встреча с собой */}
+        <SectionMeetingSelf />
+
+        {/* 7. Отношения на одной волне (Выбор мужчины из самоценности) */}
         <Section5Relationships />
 
-        {/* 6. Если ты уже в отношениях */}
+        {/* 8. Если ты уже в отношениях (Бережный подход к семье и паре) */}
         <Section6InRelationship />
 
-        {/* 7 & 8. Почему записанный курс не может дать этой глубины + Живое поле */}
+        {/* 9. Почему записанный курс не может дать глубины & Сила живого присутствия */}
         <Section7WhyLive />
 
-        {/* 9 & 10. Наш путь как проводников + Открытое поле и ответственность */}
+        {/* 10. Проводники пространства (Академическая база и разделение опыта) */}
         <Section8Guides />
 
-        {/* 11. Что происходит внутри */}
+        {/* 11. Что происходит внутри (Татьяна — глубина / Юрий — интеграция) */}
         <Section9InnerWork />
 
-        {/* 12. Как проходит неделя */}
+        {/* 12. Как проходит неделя (Живой ритм сообщества) */}
         <Section10WeekRhythm />
 
-        {/* 13. Программа рождается из вас */}
+        {/* 13. Программа рождается из вас (Адаптивный цикл) */}
         <Section11AdaptiveProgram />
 
-        {/* 14. Точка B */}
+        {/* 14. Точка B (Образ отношений и образ внутренней женщины) */}
         <Section12PointB />
 
-        {/* 15. Диагностика & Финальный экран */}
+        {/* 15. Диагностика, Блок «Что дадут первые 7 дней» и Манифест Женщины-Бриллианта */}
         <Section13Diagnostic onOpenModal={handleOpenModal} />
       </main>
 
@@ -92,7 +100,7 @@ export default function Home() {
       {/* Floating Mobile/Desktop CTA */}
       <FloatingCta onOpenModal={handleOpenModal} />
 
-      {/* Lead/Diagnostic Modal */}
+      {/* Lead/Telegram Modal */}
       <ModalLead
         isOpen={modalOpen}
         onClose={handleCloseModal}
