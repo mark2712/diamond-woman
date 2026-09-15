@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
-const basePath = "/diamond-woman/out";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath,
+  basePath: basePath || undefined,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },

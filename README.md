@@ -29,8 +29,27 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Production Deployment (VPS)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Данные подключения к боевому серверу хранятся в файле [`.env`](file:///.env).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Быстрый деплой одной командой:
+```bash
+npm run deploy
+```
+или
+```bash
+python deploy.py
+```
+
+Этот скрипт автоматически:
+1. Выполняет статическую сборку Next.js (`npm run build`).
+2. Упаковывает сгенерированные файлы из `out/`.
+3. Подключается по SSH/SFTP к серверу `185.246.155.29`.
+4. Распаковывает файлы в `/var/www/diamond-woman`, выставляет права `www-data:www-data` и перезапускает Nginx.
+5. Проверяет ответ сервера (HTTP 200).
+
+- **Главная страница:** [http://185.246.155.29/](http://185.246.155.29/)
+- **Страница ретрита:** [http://185.246.155.29/retreat/](http://185.246.155.29/retreat/)
+- **Конфигурация Nginx на сервере:** `/etc/nginx/sites-available/diamond-woman`
+
