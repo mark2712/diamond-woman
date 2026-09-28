@@ -94,7 +94,7 @@ def main():
         print("Remote output/warnings:", err)
 
     # Verify HTTP response
-    stdin, stdout, stderr = ssh.exec_command("curl -I -s http://localhost/ | head -n 1")
+    stdin, stdout, stderr = ssh.exec_command("curl -k -I -s https://retreats.guru/ | head -n 1")
     status_line = stdout.read().decode().strip()
     ssh.close()
 
