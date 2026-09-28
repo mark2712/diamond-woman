@@ -49,7 +49,8 @@ python deploy.py
 4. Распаковывает файлы в `/var/www/diamond-woman`, выставляет права `www-data:www-data` и перезапускает Nginx.
 5. Проверяет ответ сервера (HTTP 200).
 
-- **Главная страница:** [http://185.246.155.29/](http://185.246.155.29/)
-- **Страница ретрита:** [http://185.246.155.29/retreat/](http://185.246.155.29/retreat/)
+- **Главная страница:** [https://retreats.guru/](https://retreats.guru/)
+- **Страница ретрита:** [https://retreats.guru/retreat/](https://retreats.guru/retreat/)
+- **Прямой IP:** [http://185.246.155.29/](http://185.246.155.29/)
 - **Конфигурация Nginx на сервере:** `/etc/nginx/sites-available/diamond-woman`
 

@@ -59,7 +59,7 @@ export const retreatData = {
     title: "ЗА ПРЕДЕЛАМИ СИЛЫ",
     subtitle: "Вспомнить, кто ты есть. Вернуть свою силу. Пробудить возможности, которые были скрыты внутри.",
     leadDescription: "Трансформация за пределами человеческой силы: выйти за пределы ложной идентичности, страхов и ограничений, соединиться с ядром того, кто ты есть, вернуть ясность и внутреннюю силу и раскрыться как лидер своего окружения.",
-    backgroundImage: getAssetPath("/retreat/hero-bg.jpg"),
+    backgroundImage: getAssetPath("/retreat/sacred-night-ceremony-terrace-altar-wide.jpg"),
     formatBadges: [
       "5 дней в Мексике",
       "VIP-группа 4–6 человек",
@@ -308,7 +308,7 @@ export const retreatData = {
       credentials: "Более 30 лет в непрерывной шаманской традиции",
       description: "Хранитель церемониального алтаря древних знаний предков, сакральных растений силы и священного календаря Tonalpohualli. Ведет церемонии вместе со своей шаманской семьей.",
       badge: "Традиция предков",
-      image: getAssetPath("/retreat/tonalxayakatl.jpg"),
+      image: getAssetPath("/retreat/shaman-tonalxayakatl-portrait-feathers.jpg"),
     },
     {
       name: "Leticia",
@@ -316,6 +316,7 @@ export const retreatData = {
       credentials: "Хранительница женской сакральной линии и ритуала Темаскаль",
       description: "Проводник целительных травяных омовений, стихийных ритуалов и материнской оберегающей энергии церемониального круга.",
       badge: "Шаманская линия",
+      image: getAssetPath("/retreat/shaman-leticia-copal-smoke-portrait.jpg"),
     },
     {
       name: "Татьяна Мунтяну",
@@ -323,7 +324,7 @@ export const retreatData = {
       credentials: "10+ лет работы с людьми, 5+ лет в глубоких психоделических трансформациях",
       description: "Эксперт по работе с бессознательными блоками, травмами и тонкими состояниями. Обеспечивает психологическую безопасность, заботу и точную навигацию в измененных состояниях сознания.",
       badge: "Глубина и гипноз",
-      image: getAssetPath("/retreat/tatiana-muntyanu.jpg"),
+      image: getAssetPath("/retreat/tatiana-muntyanu-yellow-dress-drum-ceremony.jpg"),
     },
     {
       name: "Юрий Бузько",
@@ -331,7 +332,7 @@ export const retreatData = {
       credentials: "Основатель Института Исследований Сознания, автор книги «Последняя иллюзия»",
       description: "15 лет практики. Автор доказательной методологии переноса мистического опыта в структуру реального поведения, бизнес-решения и лидерскую позицию.",
       badge: "Наука и интеграция",
-      image: getAssetPath("/retreat/yuriy-buzko.jpg"),
+      image: getAssetPath("/retreat/shaman-copal-cleansing-yuri-buzko.jpg"),
     },
     {
       name: "Jana Krause",
@@ -339,6 +340,7 @@ export const retreatData = {
       credentials: "Специалист по работе с европейскими топ-менеджерами и предпринимателями",
       description: "Сопровождение участников на немецком и английском языках, фокусировка на вопросах выгорания и стратегического лидерства.",
       badge: "Бизнес-лидерство",
+      image: getAssetPath("/retreat/authors-tatiana-yuri-night-drums-duo.jpg"),
     },
     {
       name: "Виталий Балакин",
@@ -346,6 +348,7 @@ export const retreatData = {
       credentials: "Основатель собственной академии гипноза",
       description: "Специализация — сопровождение молодых предпринимателей, лидеров технологического сектора и IT-индустрии.",
       badge: "Инновации и фокус",
+      image: getAssetPath("/retreat/retreat-family-sunny-lawn-selfie.jpg"),
     },
   ] as Guardian[],
   vipFormat: {
@@ -363,16 +366,28 @@ export const retreatData = {
     subheading: "Уединенное историческое поместье в 1,5 часах от Мехико, скрытое от посторонних глаз среди первозданной природы",
     gallery: [
       {
-        title: "Архитектура хасиенды в сумерках",
-        url: getAssetPath("/retreat/hacienda-exterior.jpg"),
+        title: "Фасад исторической хасиенды и бассейн",
+        url: getAssetPath("/retreat/hacienda-exterior-villa-facade-pool.jpg"),
       },
       {
-        title: "Интерьер приватных комнат",
-        url: getAssetPath("/retreat/hacienda-room.jpg"),
+        title: "Инфинити-бассейн на закате с панорамой гор",
+        url: getAssetPath("/retreat/hacienda-infinity-pool-valley-twilight.jpg"),
       },
       {
-        title: "Тропический сад и костровая зона",
-        url: getAssetPath("/retreat/hacienda-garden.jpg"),
+        title: "Парадный зал с каменными колоннами и фонтаном",
+        url: getAssetPath("/retreat/hacienda-grand-hall-columns-fountain.jpg"),
+      },
+      {
+        title: "Внутреннее патио с лестницей и пальмами",
+        url: getAssetPath("/retreat/hacienda-patio-grand-staircase-palms.jpg"),
+      },
+      {
+        title: "Индивидуальный мастер-сьют участника",
+        url: getAssetPath("/retreat/hacienda-master-bedroom-carved-bed.jpg"),
+      },
+      {
+        title: "Обеденная терраса с панорамным видом на долину",
+        url: getAssetPath("/retreat/hacienda-outdoor-dining-terrace-vista.jpg"),
       },
     ],
     highlights: [
@@ -402,13 +417,12 @@ export const retreatData = {
     notIncludedText: "Отдельно оплачивается только ваш авиаперелет до Мехико (MEX) и обратно. Наша команда поможет с выбором оптимальных рейсов.",
   },
   calendar: [
-    { id: "date-1", date: "26 сентября 2026", status: "few_spots", statusLabel: "Осталось 2 места" },
-    { id: "date-2", date: "26 октября 2026", status: "available", statusLabel: "Идет отбор" },
-    { id: "date-3", date: "24 ноября 2026", status: "available", statusLabel: "Идет отбор" },
-    { id: "date-4", date: "24 декабря 2026", status: "available", statusLabel: "Новогодний слот" },
-    { id: "date-5", date: "22 января 2027", status: "available", statusLabel: "Идет отбор" },
-    { id: "date-6", date: "21 февраля 2027", status: "available", statusLabel: "Идет отбор" },
-    { id: "date-7", date: "22 марта 2027", status: "available", statusLabel: "Идет отбор" },
+    { id: "date-1", date: "26 октября 2026", status: "few_spots", statusLabel: "Осталось 2 места" },
+    { id: "date-2", date: "24 ноября 2026", status: "available", statusLabel: "Идет отбор" },
+    { id: "date-3", date: "24 декабря 2026", status: "available", statusLabel: "Новогодний слот" },
+    { id: "date-4", date: "22 января 2027", status: "available", statusLabel: "Идет отбор" },
+    { id: "date-5", date: "21 февраля 2027", status: "available", statusLabel: "Идет отбор" },
+    { id: "date-6", date: "22 марта 2027", status: "available", statusLabel: "Идет отбор" },
   ] as RetreatDate[],
   testimonials: [
     {
@@ -485,9 +499,9 @@ export const retreatData = {
   contacts: {
     phone: "+7 (999) 000-00-00",
     phoneDisplay: "+7 (999) 000-00-00",
-    telegramUsername: "@beyondforce_retreat",
-    telegramUrl: "https://t.me/beyondforce_retreat",
-    email: "retreat@beyondforce.me",
+    telegramUsername: "@Hypno_light_therapist",
+    telegramUrl: "https://t.me/Hypno_light_therapist",
+    email: "amazonkafitness2022@gmail.com",
     locationSummary: "Мексика, приватная хасиенда (1,5 часа от Мехико)",
   },
 };

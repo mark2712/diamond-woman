@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { CrossIcon, DiamondIcon, TelegramIcon, CheckIcon, SparklesIcon, ArrowRightIcon } from "./icons";
 import { siteData } from "@/data/data";
+import { sendLead } from "@/lib/sendLead";
 
 interface ModalLeadProps {
   isOpen: boolean;
@@ -22,35 +23,50 @@ export default function ModalLead({
   const [comment, setComment] = useState("");
   const [showManualForm, setShowManualForm] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
 
-    if (typeof window !== "undefined") {
-      try {
-        const leadEvent = new CustomEvent("woman-diamond:lead", {
-          detail: {
-            name,
-            contact,
-            comment,
-            source,
-            timestamp: new Date().toISOString(),
-          },
-        });
-        window.dispatchEvent(leadEvent);
-      } catch {
-        // noop
+    const res = await sendLead({
+      name,
+      contact,
+      comment,
+      source: `Diamond Woman: ${source} (${title})`,
+    });
+
+    setIsSubmitting(false);
+
+    if (res.success) {
+      setSubmitted(true);
+      if (typeof window !== "undefined") {
+        try {
+          const leadEvent = new CustomEvent("woman-diamond:lead", {
+            detail: {
+              name,
+              contact,
+              comment,
+              source,
+              timestamp: new Date().toISOString(),
+            },
+          });
+          window.dispatchEvent(leadEvent);
+        } catch {
+          // noop
+        }
       }
+    } else {
+      setErrorMessage(res.error || "Не удалось отправить заявку. Попробуйте еще раз.");
     }
   };
 
   const handleTelegramDirect = () => {
-    const tgUrl = `${siteData.footer.contacts.telegramUrl}?start=${encodeURIComponent(
-      source.slice(0, 32).replace(/\s+/g, "_")
-    )}`;
+    const tgUrl = siteData.footer.contacts.telegramUrl || "https://t.me/Hypno_light_therapist";
     window.open(tgUrl, "_blank", "noopener,noreferrer");
     onClose();
   };
@@ -131,10 +147,10 @@ export default function ModalLead({
                   </div>
                   <div>
                     <div className="font-extrabold uppercase tracking-wider text-xs sm:text-sm text-white">
-                      ВОЙТИ ЧЕРЕЗ TELEGRAM
+                      НАПИСАТЬ В TELEGRAM
                     </div>
                     <div className="text-[11px] sm:text-xs font-normal text-white/90">
-                      Мгновенный старт в боте без ожидания
+                      Прямой контакт: @Hypno_light_therapist
                     </div>
                   </div>
                 </div>
@@ -226,11 +242,18 @@ export default function ModalLead({
                     />
                   </div>
 
+                  {errorMessage && (
+                    <div className="p-3 text-xs text-red-600 bg-red-50 border border-red-200 rounded-xl">
+                      {errorMessage}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#e6c35c] via-[#ffd978] to-[#d4af37] text-[#1c1400] font-bold text-xs uppercase tracking-[0.15em] shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#e6c35c] via-[#ffd978] to-[#d4af37] text-[#1c1400] font-bold text-xs uppercase tracking-[0.15em] shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Отправить заявку
+                    {isSubmitting ? "Отправка..." : "Отправить заявку"}
                   </button>
                 </form>
               </div>

@@ -98,10 +98,11 @@ def main():
     status_line = stdout.read().decode().strip()
     ssh.close()
 
+    domain = env.get("SERVER_DOMAIN", host)
     print("\n==========================================")
     print(f"Deployment SUCCESSFUL! ({status_line})")
-    print(f"Live site: http://{host}/")
-    print(f"Retreat page: http://{host}/retreat/")
+    print(f"Live site: https://{domain}/")
+    print(f"Retreat page: https://{domain}/retreat/")
     print("==========================================")
 
 if __name__ == "__main__":

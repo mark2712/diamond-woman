@@ -35,9 +35,9 @@ export const ctaSettings: CtaSettings = {
   // Номер счетчика Яндекс.Метрики можно указать здесь (например, 99999999)
   ymCounterId: undefined,
   
-  defaultTelegramLink: "https://t.me/womandiamond_bot",
-  defaultPaymentLink: "https://t.me/womandiamond_bot?start=pay7days",
-  defaultDiagnosticLink: "https://t.me/womandiamond_bot?start=diagnostic",
+  defaultTelegramLink: "https://t.me/Hypno_light_therapist",
+  defaultPaymentLink: "https://t.me/Hypno_light_therapist",
+  defaultDiagnosticLink: "https://t.me/Hypno_light_therapist",
 
   actions: {
     TRY_7_DAYS: {

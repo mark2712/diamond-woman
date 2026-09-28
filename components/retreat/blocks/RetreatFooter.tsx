@@ -41,34 +41,44 @@ export default function RetreatFooter() {
               <a href="#program" className="hover:text-[#F9D423] transition-colors">Программа 1–6</a>
               <a href="#preparation" className="hover:text-[#F9D423] transition-colors">Подготовка</a>
               <a href="#integration" className="hover:text-[#F9D423] transition-colors">4 мес. интеграции</a>
-              <a href="#guardians" className="hover:text-[#F9D423] transition-colors">Хранители силы</a>
+              {/* <a href="#guardians" className="hover:text-[#F9D423] transition-colors">Хранители силы</a> */}
               <a href="#vip-format" className="hover:text-[#F9D423] transition-colors">VIP-формат 4–6</a>
               <a href="#calendar" className="hover:text-[#F9D423] transition-colors">Даты заездов</a>
             </div>
           </div>
 
-          {/* Contact by Phone */}
+          {/* Contact with Coordinators */}
           <div className="md:col-span-3 flex flex-col gap-3">
             <span className="text-xs uppercase tracking-[0.2em] text-[#d4af37] font-semibold mb-1">
               Связь с координатором
             </span>
             <div className="flex flex-col gap-2.5 text-xs">
-              <div className="p-3 rounded-xl bg-[#14161e] border border-[#252834]">
-                <div className="text-[11px] text-[#9f9c96] uppercase tracking-wider mb-1">
-                  Прямой телефон / WhatsApp
+              <a
+                href={retreatData.contacts.telegramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-[#2AABEE]/10 border border-[#2AABEE]/30 hover:bg-[#2AABEE]/20 transition-all flex items-center gap-2.5 group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#2AABEE]/20 flex items-center justify-center text-[#2AABEE] shrink-0">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                  </svg>
                 </div>
-                <a
-                  href={`tel:${retreatData.contacts.phone}`}
-                  className="font-serif text-sm text-white hover:text-[#F9D423] font-bold transition-colors block"
-                >
-                  {retreatData.contacts.phoneDisplay}
-                </a>
-              </div>
+                <div>
+                  <div className="text-[10px] text-[#2AABEE] uppercase tracking-wider font-semibold">
+                    Написать в Telegram
+                  </div>
+                  <div className="text-white group-hover:text-[#F9D423] font-bold text-xs transition-colors">
+                    {retreatData.contacts.telegramUsername}
+                  </div>
+                </div>
+              </a>
               <a
                 href={`mailto:${retreatData.contacts.email}`}
-                className="text-[#a09e99] hover:text-[#d4af37] transition-colors text-xs pt-1"
+                className="text-[#a09e99] hover:text-[#d4af37] transition-colors text-xs pt-1 flex items-center gap-1.5"
               >
-                {retreatData.contacts.email}
+                <span>Email:</span>
+                <span className="text-white font-medium">{retreatData.contacts.email}</span>
               </a>
             </div>
           </div>
