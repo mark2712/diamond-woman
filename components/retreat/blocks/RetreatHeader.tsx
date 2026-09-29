@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { FlameIcon, PhoneIcon } from "./icons";
 import { retreatData } from "../data/retreatData";
 import RetreatCtaButton from "./RetreatCtaButton";
+import { reachGoal } from "@/lib/metrika";
 
 interface RetreatHeaderProps {
   onOpenModal: () => void;
@@ -79,6 +80,7 @@ export default function RetreatHeader({ onOpenModal }: RetreatHeaderProps) {
             href={retreatData.contacts.telegramUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => reachGoal("zakaz_telegram", { location: "retreat_header_desktop" })}
             className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#2AABEE]/15 border border-[#2AABEE]/40 text-xs text-[#2AABEE] hover:bg-[#2AABEE]/25 transition-all shadow-[0_0_15px_rgba(42,171,238,0.15)] font-semibold"
             title="Написать в Telegram"
           >
@@ -127,6 +129,7 @@ export default function RetreatHeader({ onOpenModal }: RetreatHeaderProps) {
               href={retreatData.contacts.telegramUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => reachGoal("zakaz_telegram", { location: "retreat_header_mobile" })}
               className="w-full py-3 rounded-xl bg-[#2AABEE]/15 border border-[#2AABEE]/40 text-xs text-center text-[#2AABEE] font-semibold flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">

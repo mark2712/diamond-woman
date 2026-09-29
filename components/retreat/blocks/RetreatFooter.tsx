@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { FlameIcon, MapPinIcon, PhoneIcon } from "./icons";
 import { retreatData } from "../data/retreatData";
+import { reachGoal } from "@/lib/metrika";
 
 export default function RetreatFooter() {
   return (
@@ -57,6 +60,7 @@ export default function RetreatFooter() {
                 href={retreatData.contacts.telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => reachGoal("zakaz_telegram", { location: "retreat_footer" })}
                 className="p-3 rounded-xl bg-[#2AABEE]/10 border border-[#2AABEE]/30 hover:bg-[#2AABEE]/20 transition-all flex items-center gap-2.5 group"
               >
                 <div className="w-8 h-8 rounded-lg bg-[#2AABEE]/20 flex items-center justify-center text-[#2AABEE] shrink-0">

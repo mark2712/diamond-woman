@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { DiamondIcon, TelegramIcon, MailIcon, PhoneIcon } from "./icons";
 import { siteData } from "@/data/data";
+import { reachGoal } from "@/lib/metrika";
 
 export default function Footer() {
   const { footer } = siteData;
@@ -53,6 +56,7 @@ export default function Footer() {
                 href={footer.contacts.telegramUrl}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => reachGoal("zakaz_telegram", { location: "diamond_footer" })}
                 className="flex items-center gap-2 text-[#1b1c1c] hover:text-[#735c00] font-medium transition-colors"
               >
                 <TelegramIcon className="w-4 h-4 text-[#2AABEE]" />

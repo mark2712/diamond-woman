@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { CrossIcon, FlameIcon, CheckIcon, ShieldIcon, PhoneIcon } from "./icons";
 import { retreatData } from "../data/retreatData";
 import { sendLead } from "@/lib/sendLead";
+import { reachGoal } from "@/lib/metrika";
 
 interface ModalRetreatLeadProps {
   isOpen: boolean;
@@ -51,6 +52,10 @@ export default function ModalRetreatLead({
 
     if (res.success) {
       setSubmitted(true);
+      reachGoal("zakaz", {
+        form: "retreat_modal_form",
+        messenger: preferredMessenger,
+      });
     } else {
       setErrorMessage(res.error || "Не удалось отправить заявку. Попробуйте еще раз.");
     }
@@ -173,7 +178,10 @@ export default function ModalRetreatLead({
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     type="button"
-                    onClick={() => setPreferredMessenger("Telegram")}
+                    onClick={() => {
+                      setPreferredMessenger("Telegram");
+                      reachGoal("zakaz_telegram", { action: "select_preferred_messenger_modal" });
+                    }}
                     className={`py-2.5 px-3 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 border transition-all cursor-pointer ${
                       preferredMessenger === "Telegram"
                         ? "bg-[#2AABEE]/20 border-[#2AABEE] text-[#2AABEE]"
@@ -187,7 +195,10 @@ export default function ModalRetreatLead({
                   </button>
                   <button
                     type="button"
-                    onClick={() => setPreferredMessenger("WhatsApp")}
+                    onClick={() => {
+                      setPreferredMessenger("WhatsApp");
+                      reachGoal("whatsapp", { action: "select_preferred_messenger_modal" });
+                    }}
                     className={`py-2.5 px-3 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 border transition-all cursor-pointer ${
                       preferredMessenger === "WhatsApp"
                         ? "bg-[#25D366]/20 border-[#25D366] text-[#25D366]"
@@ -274,6 +285,7 @@ export default function ModalRetreatLead({
                   href="https://t.me/Hypno_light_therapist"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => reachGoal("zakaz_telegram", { location: "retreat_modal_bottom" })}
                   className="inline-flex items-center gap-1.5 text-xs text-[#2AABEE] hover:underline"
                 >
                   <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">

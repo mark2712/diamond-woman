@@ -32,8 +32,8 @@ export interface CtaSettings {
 }
 
 export const ctaSettings: CtaSettings = {
-  // Номер счетчика Яндекс.Метрики можно указать здесь (например, 99999999)
-  ymCounterId: undefined,
+  // Номер счетчика Яндекс.Метрики
+  ymCounterId: 90529942,
   
   defaultTelegramLink: "https://t.me/Hypno_light_therapist",
   defaultPaymentLink: "https://t.me/Hypno_light_therapist",
@@ -73,7 +73,7 @@ export const ctaSettings: CtaSettings = {
       defaultLabel: "Написать в Telegram",
       behavior: "link",
       url: "https://t.me/womandiamond_bot",
-      ymGoalName: "cta_telegram",
+      ymGoalName: "zakaz_telegram",
       gaEventName: "telegram_click",
     },
     CONTACT_WHATSAPP: {
@@ -82,7 +82,7 @@ export const ctaSettings: CtaSettings = {
       defaultLabel: "Написать в WhatsApp",
       behavior: "link",
       url: "https://wa.me/",
-      ymGoalName: "cta_whatsapp",
+      ymGoalName: "whatsapp",
       gaEventName: "whatsapp_click",
     },
     CUSTOM: {

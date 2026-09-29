@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { DiamondIcon, MenuIcon, CrossIcon } from "./icons";
 import { siteData } from "@/data/data";
 import CtaButton from "./CtaButton";
+import { reachGoal } from "@/lib/metrika";
 
 interface HeaderProps {
   onOpenModal?: (source: string) => void;
@@ -179,6 +180,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
               href={siteData.footer.contacts.telegramUrl}
               target="_blank"
               rel="noreferrer"
+              onClick={() => reachGoal("zakaz_telegram", { location: "diamond_header_mobile" })}
               className="w-full py-3.5 rounded-full border border-[#d0c5af] text-center block text-xs uppercase tracking-widest text-[#4d4635] hover:text-[#1b1c1c] hover:bg-white transition-colors font-medium shadow-sm"
             >
               Telegram сообщество

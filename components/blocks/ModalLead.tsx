@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { CrossIcon, DiamondIcon, TelegramIcon, CheckIcon, SparklesIcon, ArrowRightIcon } from "./icons";
 import { siteData } from "@/data/data";
 import { sendLead } from "@/lib/sendLead";
+import { reachGoal } from "@/lib/metrika";
 
 interface ModalLeadProps {
   isOpen: boolean;
@@ -44,6 +45,11 @@ export default function ModalLead({
 
     if (res.success) {
       setSubmitted(true);
+      reachGoal("zakaz", {
+        form: "modal_lead",
+        source,
+        title,
+      });
       if (typeof window !== "undefined") {
         try {
           const leadEvent = new CustomEvent("woman-diamond:lead", {
@@ -66,6 +72,7 @@ export default function ModalLead({
   };
 
   const handleTelegramDirect = () => {
+    reachGoal("zakaz_telegram", { location: "modal_lead_direct_button" });
     const tgUrl = siteData.footer.contacts.telegramUrl || "https://t.me/Hypno_light_therapist";
     window.open(tgUrl, "_blank", "noopener,noreferrer");
     onClose();

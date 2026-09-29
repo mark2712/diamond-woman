@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { retreatData } from "../../data/retreatData";
 import { FlameIcon, ShieldIcon, CheckIcon } from "../../blocks/icons";
 import { sendLead } from "@/lib/sendLead";
+import { reachGoal } from "@/lib/metrika";
 
 export default function SectionApplicationForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -39,6 +40,10 @@ export default function SectionApplicationForm() {
 
     if (res.success) {
       setSubmitted(true);
+      reachGoal("zakaz", {
+        form: "retreat_page_form",
+        messenger: preferredMessenger,
+      });
     } else {
       setErrorMessage(res.error || "Не удалось отправить заявку. Попробуйте еще раз.");
     }
@@ -146,7 +151,10 @@ export default function SectionApplicationForm() {
                     <div className="grid grid-cols-2 gap-3">
                       <button
                         type="button"
-                        onClick={() => setPreferredMessenger("Telegram")}
+                        onClick={() => {
+                          setPreferredMessenger("Telegram");
+                          reachGoal("zakaz_telegram", { action: "select_preferred_messenger" });
+                        }}
                         className={`py-3 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 border transition-all cursor-pointer ${
                           preferredMessenger === "Telegram"
                             ? "bg-[#2AABEE]/20 border-[#2AABEE] text-[#2AABEE]"
@@ -160,7 +168,10 @@ export default function SectionApplicationForm() {
                       </button>
                       <button
                         type="button"
-                        onClick={() => setPreferredMessenger("WhatsApp")}
+                        onClick={() => {
+                          setPreferredMessenger("WhatsApp");
+                          reachGoal("whatsapp", { action: "select_preferred_messenger" });
+                        }}
                         className={`py-3 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 border transition-all cursor-pointer ${
                           preferredMessenger === "WhatsApp"
                             ? "bg-[#25D366]/20 border-[#25D366] text-[#25D366]"
@@ -250,6 +261,7 @@ export default function SectionApplicationForm() {
                       href="https://t.me/Hypno_light_therapist"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => reachGoal("zakaz_telegram", { location: "application_form_bottom" })}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2AABEE]/15 border border-[#2AABEE]/40 text-[#2AABEE] text-xs font-semibold hover:bg-[#2AABEE]/25 transition-all shadow-[0_0_20px_rgba(42,171,238,0.15)]"
                     >
                       <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
