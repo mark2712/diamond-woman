@@ -31,6 +31,25 @@ export default function Section8Guides() {
           </p>
         </div>
 
+        {/* Duo Banner */}
+        <div className="relative rounded-3xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] mb-12 shadow-xl border border-[#d4af37]/30 group">
+          <img
+            src={getAssetPath("/authors-tatiana-yuri-terrace-wide.jpg")}
+            alt="Татьяна Мунтяну и Юрий Бузько"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex items-end p-6 sm:p-10">
+            <div>
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#d4af37] font-bold block mb-1">
+                Основатели проекта
+              </span>
+              <h3 className="font-serif-luxury text-xl sm:text-3xl text-white font-bold">
+                Татьяна Мунтяну и Юрий Бузько
+              </h3>
+            </div>
+          </div>
+        </div>
+
         {/* Guides Bios Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <GuideBioCard
@@ -39,7 +58,7 @@ export default function Section8Guides() {
             bio={tatiana.bio}
             quote={tatiana.quote || "«Мы помогаем увидеть и проявить ту женщину, которая уже есть внутри.»"}
             accentColor="gold"
-            image={getAssetPath("/tatiana-muntyanu.jpg")}
+            image={getAssetPath("/tatiana-muntyanu-sea-landscape.jpg")}
           />
 
           <GuideBioCard
@@ -48,7 +67,7 @@ export default function Section8Guides() {
             bio={yuri.bio}
             quote={yuri.quote || "«Недостаточно понять сценарий. Нужно научиться жить и действовать иначе.»"}
             accentColor="mist"
-            image={getAssetPath("/yuriy-buzko.jpg")}
+            image={getAssetPath("/yuri-buzko-office-landscape.jpg")}
           />
         </div>
 

@@ -15,7 +15,7 @@ import SectionAtmosphereVideo from "@/components/retreat/sections/s_6_atmosphere
 import SectionProgramDays from "@/components/retreat/sections/s_7_program_days/s_7_program_days";
 import SectionPreparation from "@/components/retreat/sections/s_8_preparation/s_8_preparation";
 import SectionIntegration from "@/components/retreat/sections/s_9_integration/s_9_integration";
-// import SectionGuardians from "@/components/retreat/sections/s_10_guardians/s_10_guardians";
+import SectionAuthors from "@/components/retreat/sections/s_10_authors/SectionAuthors";
 import SectionVipFormat from "@/components/retreat/sections/s_11_vip_format/s_11_vip_format";
 import SectionLocation from "@/components/retreat/sections/s_12_location/s_12_location";
 import SectionAllInclusive from "@/components/retreat/sections/s_13_all_inclusive/s_13_all_inclusive";
@@ -55,7 +55,7 @@ export default function HomePage() {
         <SectionProgramDays />
         <SectionPreparation />
         <SectionIntegration />
-        {/* <SectionGuardians /> */}
+        <SectionAuthors onOpenModal={() => handleOpenModal()} />
         <SectionVipFormat />
         <SectionLocation />
         <SectionAllInclusive />

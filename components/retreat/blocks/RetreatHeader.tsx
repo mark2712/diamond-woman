@@ -28,7 +28,7 @@ export default function RetreatHeader({ onOpenModal }: RetreatHeaderProps) {
     { label: "Практики", href: "#practices" },
     { label: "Программа", href: "#program" },
     { label: "Интеграция", href: "#integration" },
-    // { label: "Хранители", href: "#guardians" },
+    { label: "Авторы", href: "#authors" },
     { label: "Хасиенда", href: "#location" },
     { label: "Даты", href: "#calendar" },
     { label: "FAQ", href: "#faq" },

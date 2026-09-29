@@ -41,7 +41,7 @@ export default function RetreatFooter() {
               <a href="#program" className="hover:text-[#F9D423] transition-colors">Программа 1–6</a>
               <a href="#preparation" className="hover:text-[#F9D423] transition-colors">Подготовка</a>
               <a href="#integration" className="hover:text-[#F9D423] transition-colors">4 мес. интеграции</a>
-              {/* <a href="#guardians" className="hover:text-[#F9D423] transition-colors">Хранители силы</a> */}
+              <a href="#authors" className="hover:text-[#F9D423] transition-colors">Авторы и ведущие</a>
               <a href="#vip-format" className="hover:text-[#F9D423] transition-colors">VIP-формат 4–6</a>
               <a href="#calendar" className="hover:text-[#F9D423] transition-colors">Даты заездов</a>
             </div>
