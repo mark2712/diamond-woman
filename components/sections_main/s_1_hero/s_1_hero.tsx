@@ -4,6 +4,7 @@ import React from "react";
 import CtaButton from "../../blocks/CtaButton";
 import { SparklesIcon, DiamondIcon } from "../../blocks/icons";
 import HeroFeatureList from "./blocks/HeroFeatureList";
+import { getAssetPath } from "@/data/data";
 
 interface HeroSectionProps {
   onOpenModal?: (source: string) => void;
@@ -52,6 +53,49 @@ export default function Section1Hero({ onOpenModal }: HeroSectionProps) {
         <p className="text-sm sm:text-base text-[#787b80] font-normal max-w-2xl mb-8 leading-relaxed">
           Живое пространство глубокой работы с женщиной, её внутренними сценариями и отношениями.
         </p>
+
+        {/* Featured Hero Photo */}
+        <div className="relative w-full max-w-4xl my-4 sm:my-6 animate-fade-in group">
+          {/* Ambient Gold Halo */}
+          <div className="absolute -inset-1.5 bg-gradient-to-r from-[#d4af37]/35 via-[#F9D423]/25 to-[#d4af37]/35 rounded-[28px] sm:rounded-[36px] blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+          {/* Image Container */}
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#d4af37]/40 bg-[#0f1115] shadow-[0_25px_70px_rgba(0,0,0,0.15)] aspect-[16/9]">
+            <img
+              src={getAssetPath("/photo_5330246163610933977_y.jpg")}
+              alt="Татьяна Мунтяну — Автор пространства Женщина-Бриллиант"
+              className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
+              loading="eager"
+            />
+
+            {/* Subtle Vignette Gradient for Depth and Badge Legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none" />
+
+            {/* Top-Right Badge: Live Online Field */}
+            {/* <div className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 backdrop-blur-md bg-white/90 border border-[#d4af37]/50 rounded-full px-3.5 py-1.5 sm:px-4 sm:py-2 shadow-lg flex items-center gap-2">
+              <SparklesIcon className="w-3.5 h-3.5 text-[#b89628]" />
+              <span className="text-[11px] sm:text-xs text-[#111417] font-bold tracking-wide">
+                Живое поле · 100% онлайн
+              </span>
+            </div> */}
+
+            {/* Bottom-Left Glass Badge: Author Info */}
+            <div className="absolute bottom-3.5 left-3.5 sm:bottom-6 sm:left-6 backdrop-blur-md bg-black/70 border border-white/20 rounded-2xl p-3 sm:p-4 text-left shadow-2xl max-w-[270px] sm:max-w-md">
+              <div className="flex items-center gap-2 mb-1">
+                <DiamondIcon className="w-3.5 h-3.5 text-[#d4af37]" />
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#d4af37] font-bold">
+                  Автор и ведущая
+                </span>
+              </div>
+              <h3 className="text-white text-sm sm:text-lg font-bold font-serif-luxury leading-tight mb-1">
+                Татьяна Мунтяну
+              </h3>
+              <p className="text-[#e2ded6] text-[11px] sm:text-xs leading-relaxed hidden sm:block">
+                Глубинная терапия сценариев, возвращение в тело и раскрытие истинной женской самоценности
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Guides Badge */}
         <div className="flex items-center gap-3 px-6 py-2.5 rounded-full bg-[#f7f5f2] border border-[#e5e0d5] mb-8 shadow-sm">
